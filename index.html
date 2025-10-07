@@ -31,21 +31,33 @@
             aria-controls="nav-panel"
             aria-label="Відкрити меню"
           >
-            <span class="ko-nav__toggle-icon ko-nav__toggle-icon--menu" aria-hidden="true">
+            <span
+              class="ko-nav__toggle-icon ko-nav__toggle-icon--menu"
+              aria-hidden="true"
+            >
               <span class="ko-nav__toggle-line ko-nav__toggle-line--top"></span>
-              <span class="ko-nav__toggle-line ko-nav__toggle-line--bottom"></span>
+              <span
+                class="ko-nav__toggle-line ko-nav__toggle-line--bottom"
+              ></span>
             </span>
-            <span class="ko-nav__toggle-icon ko-nav__toggle-icon--close" aria-hidden="true">
-              <span class="ko-nav__toggle-close-line ko-nav__toggle-close-line--left"></span>
-              <span class="ko-nav__toggle-close-line ko-nav__toggle-close-line--right"></span>
+            <span
+              class="ko-nav__toggle-icon ko-nav__toggle-icon--close"
+              aria-hidden="true"
+            >
+              <span
+                class="ko-nav__toggle-close-line ko-nav__toggle-close-line--left"
+              ></span>
+              <span
+                class="ko-nav__toggle-close-line ko-nav__toggle-close-line--right"
+              ></span>
             </span>
           </button>
           <div id="nav-panel" class="ko-nav__panel">
             <ul id="nav-list" class="ko-nav__list">
               <li><a class="is-active" href="#home">Головна</a></li>
               <li><a href="#about">Хто ми</a></li>
-              <li><a href="#services">Кейси</a></li>
-              <li><a href="#work">Як і що ми робимо</a></li>
+              <li><a href="#services">Послуги</a></li>
+              <li><a href="#difference">Як і що ми робимо</a></li>
             </ul>
           </div>
         </nav>
@@ -82,21 +94,45 @@
       </section>
 
       <!-- Difference -->
-      <section class="difference" aria-labelledby="difference-title">
+      <section id="difference" class="difference" aria-labelledby="difference-title">
         <div class="container">
           <h2 id="difference-title" class="section-title difference__title">
-            Чому ми робимо різницю
+            Як ми робимо різницю
           </h2>
           <div class="difference__grid">
             <article class="difference__card difference__card--dark">
-              <div class="difference__badge" aria-hidden="true">K/O</div>
-              <div class="difference__chips">
-                <span class="difference__chip">Фінтех</span>
-                <span class="difference__chip">Медицина</span>
-                <span class="difference__chip">Телеком</span>
-                <span class="difference__chip">Е-комерс</span>
-                <span class="difference__chip">Освіта</span>
-                <span class="difference__chip">B2B сервіси</span>
+              <div class="difference__badge" aria-hidden="true">
+                <img src="dist/images/logo.svg" alt="" />
+              </div>
+              <div class="difference__chips" aria-hidden="true">
+                <div
+                  class="difference__chips-track difference__chips-track--forward"
+                >
+                  <div class="difference__chips-set">
+                    <span class="difference__chip">Фінтех</span>
+                    <span class="difference__chip">Медицина</span>
+                    <span class="difference__chip">Телеком</span>
+                    <span class="difference__chip">Е-комерс</span>
+                    <span class="difference__chip">Освіта</span>
+                    <span class="difference__chip">B2B сервіси</span>
+                    <span class="difference__chip">Продукти SaaS</span>
+                    <span class="difference__chip">Маркетплейси</span>
+                  </div>
+                </div>
+                <div
+                  class="difference__chips-track difference__chips-track--reverse"
+                >
+                  <div class="difference__chips-set">
+                    <span class="difference__chip">Нішеві стартапи</span>
+                    <span class="difference__chip">AI-сервіси</span>
+                    <span class="difference__chip">Кейси для агентств</span>
+                    <span class="difference__chip">EdTech</span>
+                    <span class="difference__chip">Продукти Web3</span>
+                    <span class="difference__chip">Сервіси для бізнесу</span>
+                    <span class="difference__chip">Локальні бренди</span>
+                    <span class="difference__chip">SaaS-аналітика</span>
+                  </div>
+                </div>
               </div>
               <h3 class="difference__subtitle">
                 12 років досвіду в
@@ -104,38 +140,43 @@
                 цифрових продуктах
               </h3>
               <p class="difference__text">
-                Понад 180 запусків для продуктів у різних нішах: від маркетплейсів
-                та SaaS до локальних сервісів і стартапів. Розуміємо бізнес,
-                аудиторію і метрики.
+                Понад 180 запусків для продуктів у різних нішах: від
+                маркетплейсів та SaaS до локальних сервісів і стартапів.
+                Розуміємо бізнес, аудиторію і метрики.
               </p>
             </article>
 
             <article class="difference__card difference__card--light">
               <div class="difference__stats">
                 <div class="difference__stat">
-                  <div class="difference__bar difference__bar--low">
-                    <span class="sr-only">Середня конверсія 1–2%</span>
+                  <div class="difference__stat-bar">
+                    <span
+                      class="difference__stat-fill difference__stat-fill--low"
+                    ></span>
                   </div>
-                  <div class="difference__stat-copy">
-                    <p class="difference__stat-label">
-                      Більшість сайтів конвертує погано
+                  <div class="difference__stat-info">
+                    <p class="difference__stat-title">
+                      Більшість сайтів майже не конвертує
                     </p>
-                    <p class="difference__stat-note">
-                      слабкий UX, помилки SEO, неочевидний шлях користувача
+                    <p class="difference__stat-desc">
+                      недооцінений UX, слабкий контент, втрата потенціалу
                     </p>
                   </div>
                   <span class="difference__stat-value">1–2%</span>
                 </div>
                 <div class="difference__stat difference__stat--highlight">
-                  <div class="difference__bar difference__bar--high">
-                    <span class="sr-only">Наші сайти дають 7–16%</span>
+                  <div class="difference__stat-bar">
+                    <span
+                      class="difference__stat-fill difference__stat-fill--high"
+                    ></span>
                   </div>
-                  <div class="difference__stat-copy">
-                    <p class="difference__stat-label">
-                      Ми проектуємо під конверсію
+                  <div class="difference__stat-info">
+                    <p class="difference__stat-title">
+                      Наші проекти будують конверсію системно
                     </p>
-                    <p class="difference__stat-note">
-                      дослідження поведінки + аналітика + постійна оптимізація
+                    <p class="difference__stat-desc">
+                      гіпотези, аналітика, регулярні покращення — жодної
+                      випадковості
                     </p>
                   </div>
                   <span class="difference__stat-value">7–16%</span>
@@ -279,14 +320,36 @@
               </label>
               <fieldset class="chips field field--full">
                 <legend>Цікаве</legend>
-                <button type="button" class="chip" data-value="Дизайн">
+                <button
+                  type="button"
+                  class="chip"
+                  data-value="Дизайн"
+                  aria-pressed="false"
+                >
                   Дизайн
                 </button>
-                <button type="button" class="chip" data-value="Розробка">
+                <button
+                  type="button"
+                  class="chip"
+                  data-value="Розробка"
+                  aria-pressed="false"
+                >
                   Розробка
                 </button>
-                <button type="button" class="chip" data-value="SEO">SEO</button>
-                <button type="button" class="chip" data-value="Аудит">
+                <button
+                  type="button"
+                  class="chip"
+                  data-value="SEO"
+                  aria-pressed="false"
+                >
+                  SEO
+                </button>
+                <button
+                  type="button"
+                  class="chip"
+                  data-value="Аудит"
+                  aria-pressed="false"
+                >
                   Аудит
                 </button>
                 <input type="hidden" name="interest" value="" />

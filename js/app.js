@@ -61,14 +61,33 @@ if (toggle && panel) {
   });
 }
 
+// Duplicate marquee chips via JS so markup stays DRY
+document.querySelectorAll('.difference__chips-track').forEach((track) => {
+  const sets = track.querySelectorAll('.difference__chips-set');
+  if (!sets.length) return;
+  if (sets.length === 1) {
+    const clone = sets[0].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  } else {
+    sets.forEach((set, index) => {
+      if (index > 0) {
+        set.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+});
+
 // Sticky header shadow
 const header = document.querySelector('[data-sticky]');
-let lastY = 0;
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  header.style.boxShadow = y > 6 ? '0 8px 24px rgba(0,0,0,.25)' : 'none';
-  lastY = y;
-});
+if (header) {
+  const toggleShadow = () => {
+    const y = window.scrollY;
+    header.style.boxShadow = y > 6 ? '0 8px 24px rgba(0, 0, 0, 0.25)' : 'none';
+  };
+  toggleShadow();
+  window.addEventListener('scroll', toggleShadow);
+}
 
 // Smooth anchor
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -84,7 +103,8 @@ const chips = document.querySelectorAll('.chip');
 const interest = document.querySelector('input[name="interest"]');
 chips.forEach(ch=>{
   ch.addEventListener('click',()=>{
-    ch.classList.toggle('is-active');
+    const isActive = ch.classList.toggle('is-active');
+    ch.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     const values = Array.from(document.querySelectorAll('.chip.is-active')).map(c=>c.dataset.value);
     if (interest) interest.value = values.join(', ');
   })
@@ -93,31 +113,54 @@ chips.forEach(ch=>{
 // Form validation (very light)
 const form = document.querySelector('.form');
 if(form){
+  const requiredFields = ['email','name']
+    .map(name=>form.querySelector(`input[name="${name}"]`))
+    .filter(Boolean);
+  const setFieldError = (input, hasError) => {
+    const field = input.closest('.field');
+    if (!field) return;
+    field.classList.toggle('field--error', hasError);
+  };
+  requiredFields.forEach(input=>{
+    input.addEventListener('input', ()=>{
+      setFieldError(input, !input.value.trim());
+    });
+  });
   form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    const email = form.querySelector('input[name="email"]');
-    const name = form.querySelector('input[name="name"]');
     let ok = true;
-    [email,name].forEach(input=>{
-      if(!input.value.trim()){ ok=false; input.style.outline='2px solid rgba(212,107,255,.6)'; }
-    })
+    requiredFields.forEach(input=>{
+      const hasError = !input.value.trim();
+      setFieldError(input, hasError);
+      if(hasError){ ok=false; }
+    });
     if(!ok) return;
     // TODO: інтеграція: fetch('/api', {method:'POST', body:new FormData(form)})
     alert('Дякуємо! Ми звʼяжемось протягом дня.');
     form.reset();
-    document.querySelectorAll('.chip.is-active').forEach(c=>c.classList.remove('is-active'));
+    requiredFields.forEach(input=>setFieldError(input,false));
+    document.querySelectorAll('.chip.is-active').forEach(c=>{
+      c.classList.remove('is-active');
+      c.setAttribute('aria-pressed','false');
+    });
     if (interest) interest.value = '';
   })
 }
 
 // Intersection reveal
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} })
-},{threshold:.12});
-
-[...document.querySelectorAll('.card,.form,.hero__card')].forEach(el=>{
-  el.classList.add('reveal'); io.observe(el);
-});
+const revealTargets = document.querySelectorAll('.card,.form,.hero__card');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} })
+  },{threshold:.12});
+  revealTargets.forEach(el=>{
+    el.classList.add('reveal'); io.observe(el);
+  });
+} else {
+  revealTargets.forEach(el=>{
+    el.classList.add('is-in');
+  });
+}
 
 // Footer year
 const y = document.getElementById('y'); if(y) y.textContent = new Date().getFullYear();

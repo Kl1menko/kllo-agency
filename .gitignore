@@ -7,5 +7,4 @@ Thumbs.db
 .idea/
 
 # builds/temp
-dist/
 node_modules/
