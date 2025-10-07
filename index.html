@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KLLO Agency</title>
+    <meta
+      name="description"
+      content="Агенція KLLO. Створюємо сайти, які виглядають, працюють і приносять результат. Дизайн + розробка + SEO + аудит."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Зібраний CSS із SASS (scss/styles.scss → dist/styles.css) -->
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="ko-header" data-sticky>
+      <div class="container">
+        <a href="#home" class="ko-logo" aria-label="K/O — на початок">
+          <img src="dist/images/logo.svg" alt="" class="ko-logo__img" />
+        </a>
+        <nav class="ko-nav" aria-label="Головна навігація">
+          <button
+            class="ko-nav__toggle"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            aria-label="Відкрити меню"
+          >
+            <span class="ko-nav__toggle-icon ko-nav__toggle-icon--menu" aria-hidden="true">
+              <span class="ko-nav__toggle-line ko-nav__toggle-line--top"></span>
+              <span class="ko-nav__toggle-line ko-nav__toggle-line--bottom"></span>
+            </span>
+            <span class="ko-nav__toggle-icon ko-nav__toggle-icon--close" aria-hidden="true">
+              <span class="ko-nav__toggle-close-line ko-nav__toggle-close-line--left"></span>
+              <span class="ko-nav__toggle-close-line ko-nav__toggle-close-line--right"></span>
+            </span>
+          </button>
+          <div id="nav-panel" class="ko-nav__panel">
+            <ul id="nav-list" class="ko-nav__list">
+              <li><a class="is-active" href="#home">Головна</a></li>
+              <li><a href="#about">Хто ми</a></li>
+              <li><a href="#services">Кейси</a></li>
+              <li><a href="#work">Як і що ми робимо</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero__card">
+            <div class="hero__pill">Нові послуги 2025 ›</div>
+            <picture class="hero__art">
+              <source
+                srcset="dist/images/mob-hero.png"
+                media="(max-width: 700px)"
+              />
+              <img
+                src="dist/images/hero.png"
+                alt="Команда KLLO презентує нові послуги 2025"
+                class="hero__illustration"
+              />
+            </picture>
+            <p class="hero__lead">
+              Сайти мають працювати, а не просто виглядати. Наші приносять дохід
+              — решта не цікаво.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--black" href="#contact">Звʼязатись з нами</a>
+              <p class="hero__hint">Це безкоштовно :)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Difference -->
+      <section class="difference" aria-labelledby="difference-title">
+        <div class="container">
+          <h2 id="difference-title" class="section-title difference__title">
+            Чому ми робимо різницю
+          </h2>
+          <div class="difference__grid">
+            <article class="difference__card difference__card--dark">
+              <div class="difference__badge" aria-hidden="true">K/O</div>
+              <div class="difference__chips">
+                <span class="difference__chip">Фінтех</span>
+                <span class="difference__chip">Медицина</span>
+                <span class="difference__chip">Телеком</span>
+                <span class="difference__chip">Е-комерс</span>
+                <span class="difference__chip">Освіта</span>
+                <span class="difference__chip">B2B сервіси</span>
+              </div>
+              <h3 class="difference__subtitle">
+                12 років досвіду в
+                <span>крос-індустріальних</span>
+                цифрових продуктах
+              </h3>
+              <p class="difference__text">
+                Понад 180 запусків для продуктів у різних нішах: від маркетплейсів
+                та SaaS до локальних сервісів і стартапів. Розуміємо бізнес,
+                аудиторію і метрики.
+              </p>
+            </article>
+
+            <article class="difference__card difference__card--light">
+              <div class="difference__stats">
+                <div class="difference__stat">
+                  <div class="difference__bar difference__bar--low">
+                    <span class="sr-only">Середня конверсія 1–2%</span>
+                  </div>
+                  <div class="difference__stat-copy">
+                    <p class="difference__stat-label">
+                      Більшість сайтів конвертує погано
+                    </p>
+                    <p class="difference__stat-note">
+                      слабкий UX, помилки SEO, неочевидний шлях користувача
+                    </p>
+                  </div>
+                  <span class="difference__stat-value">1–2%</span>
+                </div>
+                <div class="difference__stat difference__stat--highlight">
+                  <div class="difference__bar difference__bar--high">
+                    <span class="sr-only">Наші сайти дають 7–16%</span>
+                  </div>
+                  <div class="difference__stat-copy">
+                    <p class="difference__stat-label">
+                      Ми проектуємо під конверсію
+                    </p>
+                    <p class="difference__stat-note">
+                      дослідження поведінки + аналітика + постійна оптимізація
+                    </p>
+                  </div>
+                  <span class="difference__stat-value">7–16%</span>
+                </div>
+              </div>
+              <h3 class="difference__subtitle difference__subtitle--light">
+                Кожен екран зв’язує користувача з дією
+              </h3>
+              <p class="difference__text difference__text--light">
+                Працюємо з гіпотезами, тестами і чіткими KPI. Дизайн, контент і
+                код штовхають до заявки, а не відволікають. Показуємо, як ваш
+                продукт вирішує задачу і чому варто звернутися саме до вас.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="about__media" aria-hidden="true">
+            <div class="blob blob--left"></div>
+            <img
+              src="https://dummyimage.com/800x380/1a1a1a/ffffff&text=K%2FO"
+              alt="K/O"
+              loading="lazy"
+            />
+            <div class="blob blob--right"></div>
+          </div>
+          <h2 id="about-title" class="section-title">Хто ми?</h2>
+          <p class="about__lead">
+            Ми почали з простого: один дизайнить, інший кодить. Обʼєдналися, бо
+            бачили, як часто сайти роблять
+            <b>«аби було»</b>. Нам так не підходить.
+          </p>
+          <p class="about__text">
+            Зібрали команду і створили агенцію — без води, без шаблонів. Робимо
+            сайти, які виглядають, працюють і приносять результат.
+          </p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services" aria-labelledby="services-title">
+        <div class="container">
+          <h2 id="services-title" class="section-title section-title--wavy">
+            Послуги
+          </h2>
+          <div class="cards">
+            <article class="card">
+              <header class="card__head">
+                <h3 class="card__title">Розробка сайтів</h3>
+                <p class="card__sub">
+                  Технічно сильні сайти з фокусом на SEO, швидкість і конверсії.
+                </p>
+              </header>
+              <img
+                class="card__img"
+                src="https://dummyimage.com/640x360/101010/7b7b7b&text=Code+Preview"
+                alt="UI код"
+                loading="lazy"
+              />
+            </article>
+
+            <article class="card">
+              <header class="card__head">
+                <h3 class="card__title">Дизайн</h3>
+                <p class="card__sub">
+                  Системний дизайн без шуму й прикрас, які не працюють.
+                </p>
+              </header>
+              <img
+                class="card__img"
+                src="https://dummyimage.com/640x360/101010/7b7b7b&text=Design+Grid"
+                alt="Дизайн-сітка"
+                loading="lazy"
+              />
+            </article>
+
+            <article class="card">
+              <header class="card__head">
+                <h3 class="card__title">SEO</h3>
+                <p class="card__sub">
+                  Технічне й контентне SEO: структура, швидкість, індексація.
+                </p>
+              </header>
+              <img
+                class="card__img"
+                src="https://dummyimage.com/640x360/101010/7b7b7b&text=Search"
+                alt="Пошук"
+                loading="lazy"
+              />
+            </article>
+
+            <article class="card">
+              <header class="card__head">
+                <h3 class="card__title">Аудит</h3>
+                <p class="card__sub">
+                  Розкладаємо сайт на метрики. Чіткий план покращень.
+                </p>
+              </header>
+              <img
+                class="card__img"
+                src="https://dummyimage.com/640x360/101010/7b7b7b&text=Audit+Notes"
+                alt="Аудит"
+                loading="lazy"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title" class="section-title">Залишити заявку</h2>
+          <form class="form" novalidate>
+            <div class="form__grid">
+              <label class="field">
+                <span>Імʼя</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Дмитро Коваль"
+                  required
+                />
+              </label>
+              <label class="field">
+                <span>Telegram</span>
+                <input type="text" name="tg" placeholder="@username" />
+              </label>
+              <label class="field field--full">
+                <span>Пошта</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email@example.com"
+                  required
+                />
+              </label>
+              <fieldset class="chips field field--full">
+                <legend>Цікаве</legend>
+                <button type="button" class="chip" data-value="Дизайн">
+                  Дизайн
+                </button>
+                <button type="button" class="chip" data-value="Розробка">
+                  Розробка
+                </button>
+                <button type="button" class="chip" data-value="SEO">SEO</button>
+                <button type="button" class="chip" data-value="Аудит">
+                  Аудит
+                </button>
+                <input type="hidden" name="interest" value="" />
+              </fieldset>
+            </div>
+            <button class="btn btn--black" type="submit">
+              Звʼязатись з нами
+            </button>
+            <p class="form__hint">Це безкоштовно і ненавʼязливо :)</p>
+          </form>
+        </div>
+        <div class="scribble scribble--lt" aria-hidden="true"></div>
+        <div class="scribble scribble--rb" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>© <span id="y"></span> K/O</div>
+        <a href="#home" class="to-top" aria-label="Догори">↑</a>
+      </div>
+    </footer>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
